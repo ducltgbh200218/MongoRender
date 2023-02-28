@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+    <ol>
+        {{#each products}}
+            <li>
+                {{this.name}} - {{this.price}}$
+                <img src="{{picURL}}" alt="" width="120px" height="100px">
+                <a href="/delete/{{_id}}" onclick="return confirm('Are you sure?')">Delete</a>
+                <a href="/edit/{{_id}}">Edit</a>
+            </li>
+        {{/each}}
+    </ol>
+    <ul>
+        <li><a href="/add">Add Product</a></li>
+    </ul>
+</body>
+</html>
